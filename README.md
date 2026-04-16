@@ -26,12 +26,16 @@ dotnet new console
 # dotnet add package Microsoft.AI.Foundry.Local.WinML 
 # ※↑ net9.0-windows10.0.26100 で net10.0 と互換性エラーで追加できず...
 dotnet add package Microsoft.AI.Foundry.Local
-dotnet add package OpenAI
+# dotnet add package OpenAI
+# ※↑ 入れなくても動いた
 ```
 
-dotnet_ai_foundry_local_study1.csproj
+プロジェクトファイルに以下を追加  
 ```xml
-<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  <PropertyGroup>
+    ...
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
 ```
 
 Program.cs
